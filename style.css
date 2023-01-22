@@ -89,14 +89,20 @@ body * {
   position: absolute; /* Absoluto ao relativo, ou seja fica preso no objeto pai que é RELATIVO */
   top: 50%;
   left: 0;
+  animation: slide-back 0.4s;
   z-index: 1; /* Tecnicamente joga o ítem para frente, dependendo da numeração */
   transform: translateY(-50%);
 }
 
 .light #switch button {
 
-  right: 0;
-  left: initial;
+  animation: slide-go 0.4s forwards;
+
+}
+
+#switch button:hover {
+
+  outline: 8px solid var(--highlight-color);
 
 }
 
@@ -192,4 +198,30 @@ footer {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
 
+}
+
+/* Animation */
+
+/*Iniciar animação*/
+@keyframes slide-go {
+
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+  
+}
+
+/*Volta da animação*/
+@keyframes slide-back {
+
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+  
 }
