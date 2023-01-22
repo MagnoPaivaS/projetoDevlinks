@@ -43,7 +43,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px; /* Tera a largura definida até que alcance os 588px, daí trava o conteudo para não esticar mais */
   margin: 56px auto 0;
   padding: 0 24px;
 }
